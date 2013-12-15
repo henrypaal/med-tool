@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/jquery-autocomplete.css" rel="stylesheet" type="text/css" />
+    <script src="<%: Url.Content("~/Scripts/jquery-1.5.1.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery-ui-1.8.11.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/modernizr-1.7.min.js") %>" type="text/javascript"></script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <img src="../../Content/sudameapteek.png" alt="sudameapteek"/>
+            </div>
+            <div id="logindisplay" style="color: #696969;">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div>
+            <nav>
+              <br/>
+<%--                <ul id="menu">
+                    <li><%: Html.ActionLink("Otsing", "Index", "Home")%></li>
+                </ul>--%>
+            </nav>
+        </header>
+        <section id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <footer>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
